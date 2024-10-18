@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Real Time Score Counters</title>
+    <style>
+        *{
+            font-family: Calibri,Arial, Helvetica, sans-serif;
+        }
+        h2{
+            text-align: center;
+        }
+        #grp1,#grp2{
+            padding: 10px 20px; 
+            width: 100%;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            margin: 30px;
+        }
+
+        input[type='button']{
+            width: 100%;
+            margin: 4px 5px;
+            padding: 10px 7px; 
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        @media (max-width:550px){
+            .container{
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Score Counter</h2>
+    <div class="container">
+        <input type="text" value="Group 1" id="grp1">
+        <input type="button" value="Add Score" onclick="addToGrp1()" style="background-color: #4caf50;color: #fff;">
+        <input type="button" value="Remove Score" onclick="removeFromGrp1()" style="background-color: yellowgreen;color: #ffd;">
+        <input type="button" value="Reset Score" onclick="resetScore1()" style="background-color: #f00;color: white;">
+        <p id="result"></p>
+        <br>
+        <input type="text" value="Group 2" id="grp2">
+        <input type="button" value="Add Score" onclick="addToGrp2()" style="background-color: #4caf50;color: white;">
+        <input type="button" value="Remove Score" onclick="removeFromGrp2()" style="background-color: yellowgreen;color: white;">
+        <input type="button" value="Reset Score" onclick="resetScore2()" style="background-color: #f00;color: white;">
+        <p id="result2"></p>
+    </div>
+    <script>
+        let groupOneInputEl= document.getElementById('grp1');
+        let groupTwoInputEl= document.getElementById('grp2');
+        let resultOne= document.getElementById('result');
+        let resultTwo=document.getElementById('result2');
+        let score1=0;
+        let score2=0;
+        function addToGrp1(){
+            score1++;
+            resultOne.innerHTML=`${groupOneInputEl.value}'s Score is ${score1}`
+
+        }
+        function removeFromGrp1(){
+            score1--;
+            if(score1<0){
+                resultOne.innerHTML=`<p style="color:red;margin:0;">Score Can't be negative</p>`
+                score1=0;
+            }
+            else{
+            resultOne.innerHTML=`${groupOneInputEl.value}'s Score is ${score1}`;
+            }
+        }
+
+        function addToGrp2(){
+            score2++;
+            resultTwo.innerHTML=`${groupTwoInputEl.value}'s Score is ${score2}`
+        }
+        function removeFromGrp2(){
+            score2--;
+            if(score2<0){
+                resultTwo.innerHTML=`<p style="color:red;margin:0;">Score Can't be negative</p>`;
+                score2=0;
+            }
+            else{
+            resultTwo.innerHTML=`${groupTwoInputEl.value}'s Score is ${score2}`;
+            }
+        }
+
+        function resetScore1(){
+            score1=0;
+            resultOne.innerHTML=`${groupOneInputEl.value}'s Score is ${score1}`
+        }
+
+        function resetScore2(){
+            score2=0;
+            resultTwo.innerHTML=`${groupTwoInputEl.value}'s Score is ${score2}`
+        }
+
+        function displayScore1(){
+            resultOne.innerHTML=`${groupOneInputEl.value}'s score is ${score1}`;
+        }
+        
+        function displayScore2(){
+            resultTwo.innerHTML=`${groupTwoInputEl.value}'s score is ${score2}`
+        }
+        displayScore1();
+        displayScore2();
+    </script>
+</body>
+</html>

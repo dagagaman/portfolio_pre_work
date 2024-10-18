@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en-om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="Welcome to FutureAcedamy Learn Anywhere you like online with us http://127.0.0.1:3000/index.html ">
+    <title>FutureAcedamy Official Website</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container .box{
+            width: 280px;
+            box-shadow: 0 0  25px #000;
+            padding: 20px;
+            margin: 20px;
+            transition: all 0.5s;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .box a{
+            text-decoration: none;
+            color: white;
+            background-color: #000;
+            padding: 10px 15px ;
+            font-size: 1.4rem;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 4px;
+            transition: all .3s;
+        }
+
+        .box:hover{
+            transform: scale(1.1);
+            box-shadow: 0 0 50px #000;
+        }
+
+        .box a:hover{
+            transform: scale(1.1);
+        }
+
+        .form{
+            width: 350px;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center; */
+            margin: auto;
+            background-color: #fff;
+            padding: 30px 50px 30px 50px;
+            border-radius: 4px;
+            box-shadow: 0 0 25px #04f;
+            
+        }
+
+        #name,#email,#idea{
+            width: 100%;
+            padding: 15px;
+            font-size: 1.5rem;
+            border: 0;
+            border: 1px solid ;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+       
+        #idea{
+            resize: none;
+            height: 100px;
+        }
+
+        .form:first-child{
+            text-align: left;
+        }
+
+        .button{
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 1.6rem;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: all .3s;
+        }
+
+        .button:hover{
+            opacity: 1;
+
+        }
+
+        .top-div{
+            background-color: black;
+            padding: 30px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hes{
+            text-align: center;
+           
+        }
+
+        .sec{
+            width: 400px;
+        }
+
+        .here{
+            padding: 2ex;
+        }
+
+        h1 span{
+            color: #f00;
+        }
+
+        .billings{
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap:20px;
+
+        }
+        
+
+        .billings div:hover{
+            transform: scale(1.06);
+        }
+
+        .free, .pro{
+            width: 300px;
+            box-shadow: 0 0 50px  rgba(0,0,0,.3);
+            padding: 20px;
+            transition: all .4s;
+            cursor: pointer;
+        }
+
+        .free ul, .pro ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        .free ul li, .pro ul li{
+            padding: 10px;
+            border-bottom: 1px solid green;
+        }
+
+        .price-tag{
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            opacity: 1;
+        }
+        .price-tag:hover{
+            opacity: .7;
+        }
+        .free .price-tag{
+            background-color: #f00;
+
+        }
+
+        .pro .price-tag{
+            background-color: #4caf50;
+        }
+
+        .future{
+            text-align: center;font-size: 500%; 
+        }
+
+        @media(max-width:800px){
+            .future{
+                font-size: 1.8em;
+            }
+        }
+
+        .poster{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .poster div{
+            width: 300px;
+            box-shadow: 0 0 25px rgba(25,10,0,.5);
+            padding: 20px; 
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all .3s;
+            margin: 5px;
+
+        }
+
+        .poster div:hover{
+            transform: translateY(-10px);
+        }
+
+        .poster div ul{
+            padding: 5px;
+            list-style:circle;
+        }
+
+        .poster div ul li{
+            padding: 5px;
+
+        }
+
+        footer{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #000;
+            color: white;
+            margin-top: 50px;
+        }
+
+        footer .box-footer{
+            width: 300px;
+            padding: 10px;
+
+        }
+
+        .box-footer ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        html{
+           scroll-behavior: smooth;
+        }
+
+        header{
+            
+            width: 100%;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            z-index: 1000;
+            
+        }
+
+
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul li a,.logo{
+            text-decoration: none;
+        }
+
+        li a:hover{
+            border-bottom: 2px solid green;
+        }
+
+        li a{
+            color: #fff;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: block;
+            padding: 10px;
+        }
+
+        
+
+        .mobile-header ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        .mobile-header ul{
+            list-style: none;
+            /* padding: 0; */
+            display: flex;
+            flex-direction: column;
+            /* align-items: center;
+            justify-content: center; */
+            
+        }
+
+        .mobile-header{
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            /* height: 100vh; */
+            position: relative;
+            margin-top: -20px;
+            padding: 20px;
+           
+        }
+
+        .close{
+            position: absolute;
+            top: 0;
+            right:0;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bolder;
+            border-radius: 10px;
+        }
+
+        .logo{
+            color: #fff;
+        }
+        @media (max-width:700px){
+            .desktop{
+                display: none;
+            }
+
+            .close{
+                display: inline-block;
+            }
+        }
+
+        @media (min-width:701px){
+            /* header{
+                position: fixed;
+                
+            } */
+            
+           .mobile-header{
+            display: none;
+           }
+
+           .close{
+            display: none;
+           }
+
+           .bar-icon{
+            display: none;
+           }
+        }
+
+        .mobile-header{
+            display: none;
+        }
+
+        .bar-icon{
+            font-size: 2rem;
+            color: #fff;
+            font-weight: bolder;
+            padding: 10px;
+            cursor: pointer;
+        }
+        h1.logo{
+            transition: all .3s;
+        }
+        h1.logo:hover{
+            transform: scale(1.1);
+            
+        }
+        main{
+                padding-top: 60px;
+            }
+
+            .mobile-header{
+                padding-top: 50px;
+                margin-top: 10px;
+            }
+
+            .mobile-header,header{
+                position: fixed;
+                top: 0;
+            }
+            .register{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+            }
+
+            .register input[type='text'],
+            .register input[type='email'], 
+            .register input[type='number']{
+                padding: 15px 40px;
+                font-size: 1.2rem;
+                margin: 7px 0;
+                border: none;
+                border: 2px solid #4caf50;
+                border-radius: 6px;
+            }
+
+            .register input[type='text']::placeholder,
+            .register input[type='email']::placeholder, 
+            .register input[type='number']::placeholder{
+                text-align: left;
+
+            }
+
+            #fix{
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: 100vh;
+                position: fixed;
+            }
+
+            .member{
+                width: 300px;
+                height: 300px; 
+                box-shadow: 0 0  25px rgba(0,0,0,.3);
+                padding: 20px;
+                margin: 15px;
+                transition: all .3s;
+                position: relative;
+            }
+
+            .member:hover{
+                transform: translateY(-5px);
+                
+                cursor: pointer;
+            }
+
+            .members{
+                display: flex;
+                flex-wrap: wrap;
+                
+                align-items: center;
+                justify-content: center;
+            }
+
+            .btn{
+                text-decoration: none;
+                color: #000;
+                background-color: #4ca;
+                color: #fff;
+                display: inline-block;
+                width: 100%;
+                padding: 10px 15px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                font-size: 20px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo"><h1 style="text-indent: 10px;font-family: 'Courier New', Courier, monospace;font-weight: 900;" class="logo">FutureAcedamy</h1></a>
+            <span class="bar-icon" onclick="openNav()">☰</span>
+            <ul class="desktop">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#price-tag">Price</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mobile-header">
+        <ul class="mobile">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#price-tag">Price</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+        <!-- <span class="close" onclick="closeNav()">X</span> -->
+    </div>
+
+    <main>
+        <h1 class="future" id="home"><span>FutureAcedamy</span> - Your <span style="color: #000;font-family: 'Courier New', Courier, monospace;">#1</span> Choice </h1>
+        <h1 style="text-indent: 20px;">Our missions</h1>
+        
+        <div class="poster">
+            <div class="missions">
+                <h2>Mission</h2>
+                <ul>
+                    <li>High Ethics</li>
+                    <li>Comptetive</li>
+                    <li>Strong</li>
+                    <li>Sigma</li>
+                    <li>Best</li>
+                    <li>student ever</li>
+                </ul>
+            </div>
+    
+           
+    
+            <div class="missions">
+                <h2>Values</h2>
+                <ul>
+                    <li>High Ethics</li>
+                    <li>Comptetive</li>
+                    <li>Strong</li>
+                    <li>Sigma</li>
+                    <li>Best</li>
+                    <li>student ever</li>
+                </ul>
+            </div>
+            <div class="missions">
+                <h2>Progress</h2>
+                <ul>
+                    <li>High Ethics</li>
+                    <li>Comptetive</li>
+                    <li>Strong</li>
+                    <li>Sigma</li>
+                    <li>Best</li>
+                    <li>student ever</li>
+                </ul>
+            </div>
+            
+           
+    
+        </div>
+
+        <h1 style="text-indent: 10px;">Our Members</h1>
+        <div class="members">
+            <div class="member">
+                <h2>Director</h2>
+                <p>Nikola Tesla is Lorem ipsum dolor sit amet consectetur,
+                     adipisicing elit. Nulla voluptatibus, quo error delectus et nesciunt,
+                      accusamus laborum aspernatur incidunt ullam dignissimos impedit
+                       voluptas rerum! 
+                    Repudiandae consequatur aspernatur exercitationem sed minus.</p>
+                    <a href="" class="btn">Contact</a>
+            </div>
+
+            <div class="member">
+                <h2>Assistant Director</h2>
+                <p>John F. Kennedy is Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Corporis, doloremque in architecto corrupti 
+                    quo perspiciatis tempora est fuga voluptatum necessitatibus 
+                    voluptatem magnam totam 
+                    laudantium numquam quos perferendis quaerat similique. Dolor!</p>
+                    <a href="" class="btn">Contact</a>
+            </div>
+
+            <div class="member">
+                <h2>Teacher-Maths</h2>
+                <p>Mohammed Ahmed is Lorem ipsum dolor sit amet 
+                    consectetur adipisicing elit. Laudantium modi saepe qui, 
+                    nihil architecto sed vitae ipsa, enim sit nam vel, 
+                    nisi atque non odio velit alias repudiandae? Deserunt, ut.nn znn
+                     zghX CSN SHGXxSXV hum m  hvjc <br></p>
+                     <a href="" class="btn">Contact</a>
+            </div>
+
+            <div class="member">
+                <h2>Teacher-Computer</h2>
+                <p>
+                    James is Lorem ipsum, dolor sit amet 
+                    consectetur adipisicing elit. Eveniet quod dolorum,
+                     assumenda recusandae architecto ipsum, ab soluta iusto 
+                     asperiores non consectetur veniam reprehenderit temporibus, 
+                    sed veritatis? Repellat tempora eius adipisci!
+                </p>
+                <a href="" class="btn">Contact</a>
+            </div>
+
+            <div class="member">
+                <h2>Teacher-Programming</h2>
+                <p>
+                    Tolaa is Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Veritatis vel modi architecto nulla 
+                    expedita quibusdam quos, at dolorem numquam nisi quasi, tenetur, 
+                    in error temporibus dolores! Aliquid suscipit aperiam eaque?
+                </p>
+                <a href="" class="btn">Contact</a>
+            </div>
+
+            <div class="member">
+                <h2>Teacher-Physics</h2>
+                <p>
+                    Albert Einstein is Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Expedita, aperiam. Incidunt expedita 
+                    consequatur ad corrupti illo dolorem eveniet architecto neque facere, 
+                    in voluptatibus optio culpa tenetur itaque nostrum fugit ipsam.
+                </p>
+                <a href="" class="btn">Contact</a>
+            </div>
+
+           
+        </div>
+        <h1 class="here">Here's <span>FutureAcedamy</span> for Your Child!</h1>
+        <div class="top-div">
+            <div class="form" id="about">
+            
+                <h2 style="color: #000;">Contact Us!</h2>
+                <label style="color: #000;font-size: 1.5rem;font-weight: bold;" for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name..." required>  <br> <br>
+                <label style="color: #000;font-size: 1.5rem;font-weight: bold;" for="email">Email Address: </label>
+                <input type="email" id="email" placeholder="Email Address" required><br> <br>
+                <label style="color: #000;font-size: 1.5rem;font-weight: bold;" for="idea">Your Ideas:</label>
+                <textarea name="" id="idea" placeholder="Your Comment...." maxlength="50" onkeyup="updateCounter()" required></textarea>  <br>
+                <button class="button" onclick="successFul()">Send</button>
+                <p class="error-handler" style="color: red;"></p>
+        </div>
+    
+        <div class="sec">
+            <h2 class="hes">
+                Welcome to FutureAcedamy 🏫
+        </h2>
+        <p class="ac">
+            An academy where your child Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus ipsam aspernatur ipsa inventore cum labore consectetur commodi architecto esse, neque soluta iusto unde eveniet vel nobis! Exercitationem impedit nobis fugiat.
+        </p>
+        </div>
+        </div>
+       
+        <h1 style="text-align: center;" id="why">Why <span>FutureAcedamy</span>?</h1>
+        <div class="container">
+            <div class="box">
+                <h2>Quality Teaching</h2>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Aliquid repellendus, explicabo 
+                    dolores rem cupiditate
+                     ducimus ea reiciendis quidem ipsa exercitationem
+                      provident alias quaerat veritatis! Tempora sunt ut quasi. Soluta, 
+                      laborum?
+                </p>
+                <a href="#register" id="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Interactive Learning</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut soluta 
+                    voluptas, dolorem voluptate aliquid quisquam, 
+                    minima porro voluptates ex nemo, nisi quos quod 
+                    officia voluptatum nobis magnam minus architecto!
+                </p>
+                <a href="#register" class="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Age based</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut soluta 
+                    voluptas, dolorem voluptate aliquid quisquam, 
+                    minima porro voluptates ex nemo, nisi quos quod 
+                    officia voluptatum nobis magnam minus architecto!
+                </p>
+                <a href="#register" class="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Ethical</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut soluta 
+                    voluptas, dolorem voluptate aliquid quisquam, 
+                    minima porro voluptates ex nemo, nisi quos quod 
+                    officia voluptatum nobis magnam minus architecto!
+                </p>
+                <a href="#register" class="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Best Teachers</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut soluta 
+                    voluptas, dolorem voluptate aliquid quisquam, 
+                    minima porro voluptates ex nemo, nisi quos quod 
+                    officia voluptatum nobis magnam minus architecto!
+                </p>
+                <a href="#register" class="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Cheap</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut soluta 
+                    voluptas, dolorem voluptate aliquid quisquam, 
+                    minima porro voluptates ex nemo, nisi quos quod 
+                    officia voluptatum nobis magnam minus architecto!
+                </p>
+                <a href="#register" class="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Safe</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut soluta 
+                    voluptas, dolorem voluptate aliquid quisquam, 
+                    minima porro voluptates ex nemo, nisi quos quod 
+                    officia voluptatum nobis magnam minus architecto!
+                </p>
+                <a href="#register" class="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Secure</h2>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Aliquid repellendus, explicabo 
+                    dolores rem cupiditate
+                     ducimus ea reiciendis quidem ipsa exercitationem
+                      provident alias quaerat veritatis! Tempora sunt ut quasi. Soluta, 
+                      laborum?
+                </p>
+                <a href="#register" id="button-link">Register</a>
+            </div>
+    
+            <div class="box">
+                <h2>Certified</h2>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Aliquid repellendus, explicabo 
+                    dolores rem cupiditate
+                     ducimus ea reiciendis quidem ipsa exercitationem
+                      provident alias quaerat veritatis! Tempora sunt ut quasi. Soluta, 
+                      laborum?
+                </p>
+                <a href="#register" id="button-link">Register</a>
+            </div>
+        </div>
+        <hr width="50%" color="green"><hr width="50%" color="red" style="font-weight: 900;">
+        <h1 style="text-align: center;">Choose Your Plan</h1>
+        <div class="billings" id="price-tag">
+           
+            <div class="free">
+                <h2>Free</h2>
+                <ul>
+                    <li>Access to tables</li>
+                    <li>Access to teaching eiu</li>
+                    <li>Limited Access to books</li>
+                    <li>Limited Access to the Labs</li>
+                    <li>Limited Warranty</li>
+                    <li>less features</li>
+                </ul>
+                <div class="price-tag">0 E.T.B </div>
+            </div>
+    
+            <div class="pro">
+                <h2>Pro</h2>
+                <ul>
+                    <li>Full Access to tables, Chairs</li>
+                    <li>Full access to teachers</li>
+                    <li>Limitless Access to books</li>
+                    <li>Limitless Access to the Labs</li>
+                    <li>Limitless Warranty</li>
+                    <li>and much more features</li>
+                </ul>
+                <div class="price-tag">5,000 E.T.B </div>
+            </div>
+        </div>
+
+        
+
+        <div class="register" id="register">
+            <h2 style="text-align: center;">Register</h2>
+            <form  method="get">
+            <!-- <label for="">Student Name</label> -->
+            <input type="text" placeholder="Student Full name..." required name="name"><br>
+            <!-- <label for="">Parent/Guardian Name</label> -->
+            <input type="text" placeholder="Parent/Guardian Full name..." required name="pname"><br>
+            <!-- <label for="">Parent Email</label> -->
+            <input type="email" placeholder="Parent Email Address..." required name="email"><br>
+            <!-- <label for="">Student Age</label> -->
+            <input type="number" placeholder="Student's Current Age..." required name="age" minlength="10" maxlength="10" ><br>
+            <!-- <label for="">Student's Grade</label> -->
+            <input type="number" placeholder="Student's Current Grade Level" max="12" minlength="6" required name="class"><br>
+            <input type="submit" value="Register" class="button">
+        </form>
+        </div>
+
+       
+        <p style="text-align: center;font-weight: bolder;">
+            <code><address style="text-align: center;font-weight: bolder;"><var style="text-align: center;">Copyrights Dagaga &copy; 2024 All rights reserved. </var></address></code>
+        </p>
+        <footer>
+            <div class="box-footer">
+                <h2>Grades</h2>
+                <ul>
+                    <li>Grade 6</li>
+                    <li>Grade 7</li>
+                    <li>Grade 8</li>
+                    <li>Grade 9</li>
+                    <li>Grade 10</li>
+                    <li>Grade 11</li>
+                    <li>Grade 12</li>
+                </ul>
+            </div>
+    
+            <div class="box-footer">
+                <h2>Courses</h2>
+                <ul>
+                    <li>Chemistry</li>
+                    <li>Physics</li>
+                    <li>Biology</li>
+                    <li>Mathematics</li>
+                    <li>Computer Fundamentals</li>
+                    <li>Arthitect</li>
+                    <li>Programming</li>
+                </ul>
+            </div>
+    
+            <div class="box-footer">
+                <h2>Social Medias</h2>
+                <ul>
+                    <li>YouTube</li>
+                    <li>Instagram</li>
+                    <li>FaceBook</li>
+                    <li>Discord</li>
+                    <li>Github</li>
+                    <li>Telegram</li>
+                    <li>X</li>
+                </ul>
+            </div>
+        </footer>
+       
+    </main>
+
+    
+   
+    <script>
+        const mobileMenus= document.querySelector('.mobile-header');
+        const toggleButton= document.querySelector('.bar-icon');
+        
+    function openNav(){
+        if (mobileMenus.style.display === 'block') {
+    mobileMenus.style.display = 'none';
+    toggleButton.innerHTML='☰';
+  } else {
+    mobileMenus.style.display = 'block';
+    toggleButton.innerHTML='X';
+    
+  }
+    }
+    function closeNav(){
+        document.querySelector('.mobile-header').style.display='none';
+    }
+        function closeNav(){
+             mobileMenus.style.display='none';
+           
+        }
+        function updateCounter(){
+            var comments= document.querySelector('#idea').value;
+            let maxlength=document.querySelector('#idea');
+            if(comments.length>=maxlength.getAttribute('maxLength')){
+                document.querySelector('.error-handler').innerHTML=`Sorry! You can't type more than ${maxlength.getAttribute('maxLength')} characters`;
+                
+            }
+        }
+
+       function successFul(){
+            alert(`Dear ${document.querySelector('#name').value}, we have successfully received your comment! \n Thank you, Dagaga A.`);
+            document.querySelector('#name').value='';
+            document.querySelector('#email').value='';
+            document.querySelector('#idea').value="";
+       }
+    </script>
+</body>
+</html>

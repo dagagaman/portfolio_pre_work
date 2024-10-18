@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Characters Counter</title>
+    <link rel="shortcut icon" href="logo_trial_2.png" type="image/x-icon">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: salmon;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container{
+            width: 400px;
+            background-color: lightpink;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.3);
+            margin: 10px;
+        }
+
+        .textarea{
+            resize: none;
+            width: 100%;
+            height: 100px;
+            border: 1px solid ;
+            font-family: sans-serif;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .counters{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .total{
+            color: dodgerblue;
+            font-weight: 700;
+        }
+
+        .remain{
+            color: orangered;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <img src="some.svg" alt="">
+    <div class="container">
+        <h2>Character Counter</h2>
+        <textarea  id="textarea" class="textarea" maxlength="50" placeholder="Type Here Sometext"></textarea>
+        <div class="counters">
+            <p class="total-char">
+                Total: <span id="total" class="total"></span>
+            </p>
+            <p class="remain-counter">
+                Remaining: <span id="remain" class="remain"></span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const textareaEl= document.getElementById('textarea');
+        const totalEl= document.getElementById('total');
+        const remainEl= document.getElementById('remain');
+        textareaEl.addEventListener('keyup', ()=>{
+            updateChar();
+        })
+
+        updateChar();
+
+        function updateChar(){
+            totalEl.innerHTML=textareaEl.value.length;
+            remainEl.innerHTML=textareaEl.getAttribute('maxLength')-textareaEl.value.length;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Home | Dagaga</title>
+    <link rel="stylesheet" href="portifolio.css">
+    <link rel="stylesheet" href="icons/all.css">
+    <script src="icons/all.js" defer></script>
+    <script src="portifolio.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo">Dagaga A.</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#service">service</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#home">Home</a>
+            <a href="#service">service</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="toggleButton">&#9776;</span>
+    </header>
+    <main style="margin-top: 15rem;" class="main1" id="home">
+       <div class="total-div">
+        <div class="image">
+            <img src="images/avatar2.png" alt="" class="home-img">
+        </div>
+
+        <div class="div-text">
+            <h1 class="head-1">Hi! I'm Dagaga</h1>
+            <p class="typing"></p>
+            <div class="btn-group">
+                <button class="btn" onclick="document.location=`index.html#contact`">
+                    Hire 
+                </button>
+
+                <button class="btn"  onclick="document.location=`index.html#contact`">
+                    Contact
+                </button>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Eaque quasi eum placeat reiciendis? Blanditiis aliquam at nesciunt, 
+                mollitia cumque aperiam quod.
+                 Assumenda similique esse officia optio quidem tempore quam delectus!
+            </p>
+            <div class="div-social">
+                <a href="#home"><i class="fas fa-home"></i></a>
+                <a href="#service"><i class="fas fa-tools"></i></a>
+                <a href="#education"><i class="fas fa-book"></i></a>
+                <a href="#contact"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+       </div>
+    </main>
+
+    <section class="eduucation" id="education">
+        <h2 class="heading">Education</h2>
+        <div class="school-items">
+            <div class="school-item">
+                <h3>H/Mammo Primary School</h3>
+                <div class="school-dot"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Molestias sit numquam facilis voluptatum,
+                     quos minima rem. Ipsam reiciendis facilis deleniti, dicta totam error,
+                      tenetur officia fuga est quidem aut ex?
+                </p>
+            </div>
+
+            <div class="school-item">
+                <h3>Ano Primary School</h3>
+                <div class="school-dot"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Molestias sit numquam facilis voluptatum,
+                     quos minima rem. Ipsam reiciendis facilis deleniti, dicta totam error,
+                      tenetur officia fuga est quidem aut ex?
+                </p>
+            </div>
+
+            <div class="school-item">
+                <h3>Wollega-University - SBSS</h3>
+                <div class="school-dot"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Molestias sit numquam facilis voluptatum,
+                     quos minima rem. Ipsam reiciendis facilis deleniti, dicta totam error,
+                      tenetur officia fuga est quidem aut ex?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="service">
+        <h2 class="heading">Services</h2>
+        <div class="all-services">
+            <div class="service">
+                <h3>Frontend Design</h3>
+                <img src="images/p6.jpg" alt="">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Illum dolorum unde eaque quaerat similique debitis dignissimos aliquid sunt 
+                    nam laudantium
+                     officia, pariatur, rerum a atque. Est iure laboriosam iusto ipsam!
+                </p>
+                <button class="btn"><a href="#contact">Contact</a></button>
+            </div>
+
+            <div class="service">
+                <h3>App Building</h3>
+                <img src="images/tech_phone.jpg" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Repellendus obcaecati sed maxime aut illo mollitia repellat fugit perspiciatis.
+                      Necessitatibus, quidem tempore 
+                    aliquam dolore molestiae a perspiciatis. Aperiam eius deleniti id.
+                </p>
+                <button class="btn"><a href="#contact">Contact</a></button>
+            </div>
+
+            <div class="service">
+                <h3>Graphic Designer</h3>
+                <img src="images/tech_camera.jpg" alt="">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Commodi facilis non voluptate? Maiores adipisci culpa beatae, magnam officiis ex obcaecati 
+                    optio omnis tenetur asperiores vitae velit corrupti, blanditiis, non explicabo?
+                </p>
+                <button class="btn"><a href="#contact">Contact</a></button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact</h2>
+         <form  class="contact-form" action="mailto: dagagathecoder@gmail.com?subject=People%20Contacting%20You">
+            <label for="name" spellcheck="false">Name: </label>
+            <input type="text" placeholder="Your Name Here" id="name" name="name" required> 
+            <label for="email">E-Mail: </label>
+            <input type="email" placeholder="Your email Here" id="email" name="email" required> 
+            <label for="body">E-Mail: </label>
+            <textarea  placeholder="Your Message Here" id="body" name="body" required></textarea>
+            <input type="submit" value="Contact">
+         </form>
+    </section>
+    <footer>
+        <div class="footer">
+            <h3>Follow me on Social Media</h3>
+            <ul class="div-social-footer">
+                <li><a href="https://t.me/dagagathecoder"><i class="fa fa-phone"></i></a></li>
+                <li><a href="https://youtube.com/@dagagathecoder"><i class="fa fa-bell"></i></a></li>
+                <li><a href="https://t.me/"><i class="fa fa-x"></i></a></li>
+                <li><a href="https://t.me/"><i class="fa fa-cat"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <footer>
+        <cite>
+            <code>
+                <var>
+                    <address>
+                        <pre style="margin-top: 5rem;text-align: center;font-size: large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+Dagaga Addisu &copy; 2024 
+                        </pre>
+                    </address>
+                </var>
+            </code>
+        </cite>
+    </footer>
+</body>
+</html>

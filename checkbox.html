@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const range= document.querySelector('#vol');
+        let audio= new Audio(`tunes/a.wav`);
+        function play(){
+           setTimeout( audio.play(), 150
+           )
+        }
+
+        function add(){
+            audio.volume=document.getElementById('vol').value;
+        }
+
+        alert(range.target);
+    </script>
+</head>
+<body>
+    <button onclick="play()">play</button>
+    <input type="range" name="" id="vol" max="1" min="0" value="0.5" step="any" onchange="add()">
+</body>
+</html>
